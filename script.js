@@ -66,6 +66,7 @@ add.addEventListener("click", function (det) {
 
         edit.addEventListener("click", function () {
             if (currentlyEditing && currentlyEditing !== todo) {
+                edit.textContent = "Edit";
                 currentlyEditing.querySelector("h5").textContent =
                     currentlyEditing.querySelector("input[type=text]").value;
                 currentlyEditing.querySelector("h5").classList.remove("hide");
@@ -74,6 +75,7 @@ add.addEventListener("click", function (det) {
             }
 
             if (!currentlyEditing) {
+                edit.textContent = "save";
                 editinp = document.createElement("input");
                 editinp.type = "text";
                 editinp.value = h5.textContent;
@@ -103,6 +105,7 @@ add.addEventListener("click", function (det) {
 
         });
         function saveEdit() {
+            edit.textContent = "Edit";
             h5.textContent = editinp.value;
             h5.classList.remove("hide");
             editinp.remove();
