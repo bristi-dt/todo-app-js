@@ -5,6 +5,7 @@ let container = document.querySelector(".container");
 let form = document.querySelector("form");
 let add = document.querySelector("#add");
 let starttext = document.querySelector(".starttext");
+document.querySelector("#edit")
 
 let currentlyEditing = null;
 
