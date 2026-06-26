@@ -65,6 +65,9 @@ add.addEventListener("click", function (det) {
         let editinp;
 
         edit.addEventListener("click", function () {
+ console.log("Clicked");
+    console.log(currentlyEditing);
+            
             if (currentlyEditing && currentlyEditing !== todo) {
                 edit.textContent = "Edit";
                 currentlyEditing.querySelector("h5").textContent =
