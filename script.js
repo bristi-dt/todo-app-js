@@ -30,7 +30,7 @@ add.addEventListener("click", function (det) {
         let edit = document.createElement("button");
         edit.id = "edit";
         edit.textContent = "Edit";
-        edit.classList.add = ("hide");
+        edit.classList.add("hide");
         function toggleE(el) {
             el.classList.toggle("hide");
         }
