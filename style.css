@@ -1,18 +1,18 @@
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
-
-    background: linear-gradient(135deg, pink, purple, black)
+    background: linear-gradient(135deg, pink, purple, black);
+    padding: 20px;
+    box-sizing: border-box;
 }
-
-
 
 .main {
     width: 420px;
+    max-width: 100%;
     height: 520px;
     padding: 20px;
     border-radius: 20px;
@@ -29,9 +29,8 @@ body {
 
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
-
-
 
 .head {
     text-align: center;
@@ -47,8 +46,6 @@ body {
     color: #ddd;
 }
 
-
-
 .textarea {
     display: flex;
     gap: 10px;
@@ -63,6 +60,7 @@ body {
 
     background: rgba(255, 255, 255, 0.2);
     color: white;
+    box-sizing: border-box;
 }
 
 #text::placeholder {
@@ -72,8 +70,6 @@ body {
 #text:focus {
     outline: none;
 }
-
-
 
 #add {
     padding: 10px 15px;
@@ -85,22 +81,20 @@ body {
 
     cursor: pointer;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 #add:hover {
     background: #ff2e55;
 }
 
-
-
 .container {
     display: flex;
     flex-direction: column;
     gap: 10px;
     overflow-y: auto;
+    flex: 1;
 }
-
-
 
 .todo {
     display: flex;
@@ -118,26 +112,20 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-
-
 .todo h5 {
     height: 30px;
-    width:10px;
     flex: 1;
     margin: 10px;
     font-size: 14px;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
+    word-break: break-word;
 }
-
-
 
 .completed {
     text-decoration: line-through;
     opacity: 0.6;
 }
-
-
 
 #edit {
     margin-left: 5px;
@@ -147,6 +135,7 @@ body {
     padding: 5px 10px;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 #edit:hover {
@@ -160,13 +149,130 @@ body {
     padding: 5px 10px;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 #del:hover {
     background: #ff2e55;
 }
 
-
 .hide {
     display: none;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+/* Large Tablets */
+@media (max-width: 992px) {
+    .main {
+        width: 80%;
+        max-width: 420px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+        align-items: center;
+    }
+
+    .main {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        min-height: 520px;
+    }
+
+    .textarea {
+        gap: 8px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .main {
+        width: 100%;
+        padding: 15px;
+        border-radius: 15px;
+        min-height: auto;
+    }
+
+    .head h1 {
+        font-size: 28px;
+    }
+
+    .head h4 {
+        font-size: 14px;
+    }
+
+    .textarea {
+        flex-direction: column;
+    }
+
+    #text,
+    #add {
+        width: 100%;
+    }
+
+    #add {
+        margin-top: 10px;
+        padding: 12px;
+    }
+
+    .todo {
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .todo h5 {
+        width: 100%;
+        margin: 0;
+        height: auto;
+        max-height: 80px;
+        overflow-y: auto;
+    }
+
+    #edit,
+    #del {
+        flex: 1;
+        padding: 8px;
+        margin: 0;
+    }
+}
+
+/* Very Small Phones */
+@media (max-width: 320px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .head h1 {
+        font-size: 22px;
+    }
+
+    .head h4 {
+        font-size: 12px;
+    }
+
+    #text,
+    #add {
+        font-size: 14px;
+    }
+
+    #edit,
+    #del {
+        font-size: 12px;
+        padding: 6px;
+    }
 }
